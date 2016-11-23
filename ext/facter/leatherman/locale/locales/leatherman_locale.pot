@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Puppet <docs@puppet.com>
+# This file is distributed under the same license as the leatherman_locale package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: leatherman_locale \n"
+"Report-Msgid-Bugs-To: docs@puppet.com\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: locale/locales/../tests/locale.cc
+msgid "requesting {1,number}."
+msgstr ""
+
+#: locale/locales/../tests/locale.cc
+msgctxt "foo"
+msgid "requesting {1,number}."
+msgstr ""
+
+#: locale/locales/../tests/locale.cc
+msgid "requesting {1,number} item."
+msgid_plural "requesting {1,number} items."
+msgstr[0] ""
+msgstr[1] ""
+
+#: locale/locales/../tests/locale.cc
+msgctxt "foo"
+msgid "requesting {1,number} item."
+msgid_plural "requesting {1,number} items."
+msgstr[0] ""
+msgstr[1] ""

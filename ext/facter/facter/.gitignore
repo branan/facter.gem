@@ -1,0 +1,29 @@
+# Misc files
+*.swp
+.DS_Store
+Gemfile.local
+Gemfile.lock
+/nbproject
+compile_commands.json
+.bundle
+
+# Generated files
+.gemspec
+/lib/inc/facter/export.h
+/lib/inc/facter/version.h
+/lib/tests/fixtures.hpp
+/lib/src/java/com_puppetlabs_Facter.h
+/lib/spec/spec_helper.rb
+/debug*/
+/*release*/
+/*build*/
+/.idea/
+/linux-release/
+
+facts.md
+
+# Packaging files
+ext/packaging/
+
+# packages
+pkg/

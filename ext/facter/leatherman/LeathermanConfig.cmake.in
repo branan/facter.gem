@@ -1,0 +1,57 @@
+get_filename_component(current_directory ${CMAKE_CURRENT_LIST_FILE} DIRECTORY)
+list(APPEND CMAKE_MODULE_PATH "${current_directory}/cmake")
+include(leatherman_config)
+include(options)
+include("${current_directory}/LeathermanLibraries.cmake")
+
+get_filename_component(LEATHERMAN_PREFIX "${current_directory}/../../../" ABSOLUTE)
+
+@LEATHERMAN_COMPONENTS@
+
+set(LEATHERMAN_HAVE_LOCALES @LEATHERMAN_USE_LOCALES@)
+
+if (LEATHERMAN_USE_LOCALES AND NOT LEATHERMAN_HAVE_LOCALES)
+    message(SEND_ERROR "You requested locale support, but leatherman was built without it")
+endif()
+
+set(LEATHERMAN_SHARED @LEATHERMAN_SHARED@)
+
+debug("Selected components: ${Leatherman_FIND_COMPONENTS}")
+foreach(component ${Leatherman_FIND_COMPONENTS})
+    string(TOUPPER "${component}" id_upper)
+    set(exclude_var "LEATHERMAN_EXCLUDE_${id_upper}")
+    set(include_var "LEATHERMAN_${id_upper}_INCLUDE")
+    set(lib_var "LEATHERMAN_${id_upper}_LIB")
+    set(deps_var "LEATHERMAN_${id_upper}_DEPS")
+    set(libs_var "LEATHERMAN_${id_upper}_LIBS")
+    debug("Exclude variable ${exclude_var} is ${${exclude_var}}")
+    if(${${exclude_var}})
+        debug("Excluding values for ${id_upper}")
+        debug("* include is ${include_var}: ${${include_var}}")
+        debug("* library is ${libs_var}: ${${libs_var}}")
+    else()
+        debug("Appending values for ${id_upper} to common vars")
+        debug("* include is ${${include_var}}")
+        debug("* library is ${${libs_var}}")
+        list(APPEND LEATHERMAN_INCLUDE_DIRS ${${include_var}})
+        if (NOT "" STREQUAL "${${lib_var}}")
+            # Prepend leatherman libraries, as later libs may depend on earlier libs.
+            list(INSERT LEATHERMAN_LIBS 0 ${${lib_var}})
+        endif()
+        if (${LEATHERMAN_SHARED})
+            # Created with shared libraries, ignore dependencies as they're compiled-in.
+            set(${libs_var} ${${lib_var}})
+        else()
+            append_new(LEATHERMAN_DEPS ${${deps_var}})
+        endif()
+    endif()
+endforeach()
+
+if (LEATHERMAN_LIBS OR LEATHERMAN_DEPS)
+    set(LEATHERMAN_LIBRARIES ${LEATHERMAN_LIBS} ${LEATHERMAN_DEPS})
+endif()
+
+if (LEATHERMAN_INCLUDE_DIRS)
+    list(REMOVE_DUPLICATES LEATHERMAN_INCLUDE_DIRS)
+endif()
+set(LEATHERMAN_MODULE_DIR "${current_directory}/cmake")

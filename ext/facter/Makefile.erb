@@ -1,0 +1,29 @@
+CMAKE=<%= cmake_binary %>
+ROOT=<%= source_root %>
+
+all: facter.built
+
+leatherman.built:
+	mkdir -p build/leatherman
+	cd build/leatherman && \
+	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DCURL_STATIC=TRUE -DLEATHERMAN_SHARED=OFF -DLEATHERMAN_GETTEXT=OFF ${ROOT}/leatherman && \
+	make install
+	touch leatherman.built
+
+hocon.built: leatherman.built
+	mkdir -p build/cpp-hocon
+	cd build/cpp-hocon && \
+	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DBUILD_SHARED_LIBS=OFF -DCURL_STATIC=TRUE ${ROOT}/cpp-hocon && \
+	make install
+	touch hocon.built
+
+facter.built: hocon.built
+	mkdir -p build/facter
+	cd build/facter && \
+	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DRUBY_LIB_INSTALL=../../prefix/lib -DCURL_STATIC=TRUE ${ROOT}/facter && \
+	make install
+	touch facter.built
+
+install: facter.built
+	mkdir -p ../../lib
+	cp prefix/lib/*facter* ../../lib/

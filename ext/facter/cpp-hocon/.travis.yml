@@ -1,0 +1,59 @@
+language: cpp
+compiler:
+  - gcc
+sudo: false
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - boost-latest
+    packages:
+      - gcc-4.8
+      - g++-4.8
+      - libboost-filesystem1.55-dev
+      - libboost-program-options1.55-dev
+      - libboost-regex1.55-dev
+      - libboost-date-time1.55-dev
+      - libboost-thread1.55-dev
+      - libboost-log1.55-dev
+      - libboost-locale1.55-dev
+      - libboost-chrono1.55-dev
+
+before_install:
+  # Use a predefined install location; cppcheck requires the cfg location is defined at compile-time.
+  - mkdir -p $USERDIR
+  # grab a pre-built cmake 3.2.3
+  - wget --no-check-certificate https://cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.tar.gz
+  - tar xzvf cmake-3.2.3-Linux-x86_64.tar.gz --strip 1 -C $USERDIR
+  - wget https://github.com/puppetlabs/leatherman/releases/download/${LEATHERMAN_VERSION}/leatherman.tar.gz
+  - tar xzvf leatherman.tar.gz -C $USERDIR
+
+script:
+  - ./.travis_target.sh
+
+env:
+  global:
+    - USERDIR=/tmp/userdir
+    - PYTHONUSERBASE=$USERDIR
+    - PATH=$USERDIR/bin:$PATH
+    - LD_LIBRARY_PATH=$USERDIR/lib:$LD_LIBRARY_PATH
+    - LEATHERMAN_VERSION=0.9.0
+  matrix:
+    - TRAVIS_TARGET=CPPLINT
+    - TRAVIS_TARGET=CPPCHECK
+    - TRAVIS_TARGET=RELEASE
+    - TRAVIS_TARGET=DEBUG
+
+notifications:
+  email: false
+
+deploy:
+  provider: releases
+  api_key:
+    secure: CpEaVGNtPPKb55xvohWoyAQ0IBFzatEcjnFq9zT3HTWAi8Or4wH9RTBdO6HJ64NOzUiLlR7HV7CEu0FnRqHGK3r61sc3rp9aVrmw/psHHhY5AhmrmWT304K1b6bepOOR/8y2JtDlsvY0ya1H954yFMyQ8iG11hemPwzJsJbMjxYtYXXFCsAVILPUIb9xC6vcMYgyYssfUXta73KyLdbIFS25nUq/fGX3MBXzf3PHpDcnbBrMm7aMy9tSAFrl7YDCFKWbkNczlf5v6zJIXgmjuix6Clac4DabJHufe/UHrqXtORbmuvYSOpxY4uGHi7sINfj53JsTx2pM3GCITMUVafMOyEKHYiHyIODxMs8Ey3KQLgzw8MxSZ5HaeWE7UPuIDMKBo4+qeKQw9vrsZglSNbqjJet2oOVzm7TMn9wPQm71ClefxT1lxHx/V/01jhfy3jlEPjHi756cycOQposvFzBqU8u1UyoxurifUtmpDm2f45uX6/vrUhqLCcDbJzU447GWAiKrmFRyWH7K6/AS3YNIMwdHiojF+TvmXgRO+49mDMRi8nLlCJwZHePDecU09Ir6f5ym/YsUeJHhLPwwiqHuf8lZZdtSVNOo+8FHwdRZzFwxcApR782XZSIlBbGJgDHaIF6TKrOU+C7UyxhWcmyRP6Xm06OGbcl/9nJj1Yg=
+  file: cpp-hocon.tar.gz
+  skip_cleanup: true
+  on:
+    repo: puppetlabs/cpp-hocon
+    tags: true
+    condition: '"$TRAVIS_TARGET" == "RELEASE"'

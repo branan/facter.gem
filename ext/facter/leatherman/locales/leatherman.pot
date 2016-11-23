@@ -1,0 +1,646 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Puppet <docs@puppet.com>
+# This file is distributed under the same license as the leatherman package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: leatherman 0.9.3\n"
+"Report-Msgid-Bugs-To: docs@puppet.com\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: curl/src/client.cc
+msgid "curl_easy_escape failed to escape string."
+msgstr ""
+
+#: curl/src/client.cc
+msgid "failed to create cURL handle."
+msgstr ""
+
+#. debug
+#: curl/src/client.cc
+msgid "request completed (status {1})."
+msgstr ""
+
+#: curl/src/client.cc
+msgid "unexpected HTTP method specified."
+msgstr ""
+
+#. debug
+#: curl/src/client.cc
+msgid "requesting {1}."
+msgstr ""
+
+#. warning
+#: curl/src/client.cc
+msgid "unexpected HTTP response header: {1}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/posix/dynamic_library.cc
+msgid "library {1} not found {2} ({3})."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/posix/dynamic_library.cc
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "library {1} is not loaded when attempting to load symbol {2}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/posix/dynamic_library.cc
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "symbol {1} not found in library {2}, trying alias {3}."
+msgstr ""
+
+#: dynamic_library/src/posix/dynamic_library.cc
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "symbol {1} was not found in {2}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/posix/dynamic_library.cc
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "symbol {1} not found in library {2}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid ""
+"library matching pattern {1} not found, CreateToolhelp32Snapshot failed: {2}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "library matching pattern {1} not found, Module32First failed: {2}."
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "library {1} found from pattern {2}"
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid ""
+"library {1} found from pattern {2}, but unloaded before handle was acquired"
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "no loaded libraries found matching pattern {1}"
+msgstr ""
+
+#. debug
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "library {1} not found {2}."
+msgstr ""
+
+#: dynamic_library/src/windows/dynamic_library.cc
+msgid "library is not loaded"
+msgstr ""
+
+#. debug
+#: execution/src/execution.cc
+msgid "executing command: {1}"
+msgstr ""
+
+#: execution/src/execution.cc
+msgid "failed to open the output file."
+msgstr ""
+
+#: execution/src/execution.cc
+msgid "failed to open the error file."
+msgstr ""
+
+#. debug
+#: execution/src/execution.cc
+msgid "completed processing output: closing child pipes."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+#: windows/src/system_error.cc
+msgid "{1} ({2})"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "{1}: {2} ({3})."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "select call failed"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+#: execution/src/windows/execution.cc
+msgid "child i/o failed."
+msgstr ""
+
+#. debug
+#: execution/src/posix/execution.cc
+msgid "select call was interrupted and will be retried."
+msgstr ""
+
+#. error
+#: execution/src/posix/execution.cc
+#: execution/src/windows/execution.cc
+msgid "{1} pipe i/o failed: {2}."
+msgstr ""
+
+#. debug
+#: execution/src/posix/execution.cc
+msgid "{1} pipe i/o was interrupted and will be retried."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+#: execution/src/windows/execution.cc
+msgid "command timed out after {1} seconds."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to setpgid."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to redirect child stdin."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to redirect child stdout."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to redirect child stderr."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "{1}={2}"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to fork child process"
+msgstr ""
+
+#. debug
+#: execution/src/posix/execution.cc
+#: execution/src/windows/execution.cc
+msgid "{1} was not found on the PATH."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+#: execution/src/windows/execution.cc
+msgid "child process returned non-zero exit status."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to allocate pipe for stdin redirection"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to allocate pipe for stdout redirection"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to allocate pipe for stderr redirection"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "waitpid failed"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "sigaction failed"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "failed to setup timer"
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "setitimer failed"
+msgstr ""
+
+#. debug
+#: execution/src/posix/execution.cc
+msgid "process was signaled with signal {1}."
+msgstr ""
+
+#. debug
+#: execution/src/posix/execution.cc
+msgid "process exited with status code {1}."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "child process returned non-zero exit status ({1})."
+msgstr ""
+
+#: execution/src/posix/execution.cc
+msgid "child process was terminated by signal ({1})."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "\\\\.\\Pipe\\leatherman.{1}.{2}.{3}.{4}"
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create read pipe: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create read pipe."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create write pipe: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create write pipe."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create {1} read event: {2}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create read event."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to wait for child process i/o: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to wait for child process i/o."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "asynchronous i/o on {1} failed: {2}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "asynchronous i/o failed."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "could not determine if the parent process is running in a job object"
+msgstr ""
+
+#. debug
+#: execution/src/windows/execution.cc
+msgid "child environment {1}={2}"
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "pipe could not be modified"
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "cannot open NUL device for redirecting stderr."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create process: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create child process."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create job object: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create job object."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to associate process with job object: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to associate process with job object."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to terminate process: {1}."
+msgstr ""
+
+#. warning
+#: execution/src/windows/execution.cc
+msgid "could not terminate process {1} because a job object could not be used."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to create waitable timer: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to create waitable timer."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to set waitable timer: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to set waitable timer."
+msgstr ""
+
+#. error
+#: execution/src/windows/execution.cc
+msgid "failed to wait for child process to terminate: {1}."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "failed to wait for child process to terminate."
+msgstr ""
+
+#: execution/src/windows/execution.cc
+msgid "error retrieving exit code of completed process"
+msgstr ""
+
+#. debug
+#: execution/src/windows/execution.cc
+msgid "process exited with exit code {1}."
+msgstr ""
+
+#. warning
+#: file_util/src/file.cc
+msgid "file path is an empty string"
+msgstr ""
+
+#. debug
+#: file_util/src/file.cc
+msgid "Error reading file: {1}"
+msgstr ""
+
+#: file_util/src/file.cc
+msgid "failed to open {1}"
+msgstr ""
+
+#. warning
+#: file_util/src/file.cc
+msgid "{1} has not been set"
+msgstr ""
+
+#: json_container/inc/leatherman/json_container/json_container.hpp
+#: json_container/src/json_container.cc
+msgid "not an object"
+msgstr ""
+
+#: json_container/inc/leatherman/json_container/json_container.hpp
+msgid "root is not a valid JSON object"
+msgstr ""
+
+#: json_container/inc/leatherman/json_container/json_container.hpp
+msgid "invalid key supplied; cannot navigate the provided path"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "invalid json"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "unknown object entry with key: {1}"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "not an array"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "array index out of bounds"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "not an integer"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "not a boolean"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "not a string"
+msgstr ""
+
+#: json_container/src/json_container.cc
+msgid "not a double"
+msgstr ""
+
+#: logging/src/logging.cc
+msgid ""
+"invalid log level '{1}': expected none, trace, debug, info, warn, error, or "
+"fatal."
+msgstr ""
+
+#: ruby/src/api.cc
+msgid "could not locate a ruby library"
+msgstr ""
+
+#. info
+#: ruby/src/api.cc
+msgid "ruby loaded from \"{1}\"."
+msgstr ""
+
+#. info
+#: ruby/src/api.cc
+msgid "ruby was already loaded."
+msgstr ""
+
+#. info
+#: ruby/src/api.cc
+msgid "using ruby version {1}"
+msgstr ""
+
+#: ruby/src/api.cc
+msgid "size_t maximum exceeded, requested size was {1}"
+msgstr ""
+
+#: ruby/src/api.cc
+msgid "maximum array size exceeded, reported size was {1}"
+msgstr ""
+
+#. warning
+#: ruby/src/api.cc
+msgid "preferred ruby library \"{1}\" could not be loaded."
+msgstr ""
+
+#. warning
+#: ruby/src/api.cc
+msgid "ruby library \"{1}\" could not be loaded."
+msgstr ""
+
+#. debug
+#: ruby/src/api.cc
+msgid "ruby could not be found on the PATH."
+msgstr ""
+
+#. debug
+#: ruby/src/api.cc
+msgid "ruby was found at \"{1}\"."
+msgstr ""
+
+#. warning
+#: ruby/src/api.cc
+msgid "ruby failed to run: {1}"
+msgstr ""
+
+#. debug
+#: ruby/src/api.cc
+msgid ""
+"ruby library \"{1}\" was not found: ensure ruby was built with the --enable-"
+"shared configuration option."
+msgstr ""
+
+#: windows/src/file_util.cc
+msgid "error finding FOLDERID_ProgramData: {1}"
+msgstr ""
+
+#. debug
+#: windows/src/process.cc
+#: windows/src/user.cc
+msgid "OpenProcessToken call failed: {1}"
+msgstr ""
+
+#. debug
+#: windows/src/process.cc
+msgid "GetTokenInformation call failed: {1}"
+msgstr ""
+
+#: windows/src/registry.cc
+msgid "invalid HKEY specified"
+msgstr ""
+
+#: windows/src/registry.cc
+msgid "error reading registry key {1} {2}: {3}"
+msgstr ""
+
+#: windows/src/system_error.cc
+msgid "unknown error ({1})"
+msgstr ""
+
+#. debug
+#: windows/src/user.cc
+msgid "Failed to create administrators SID: {1}"
+msgstr ""
+
+#. debug
+#: windows/src/user.cc
+msgid "Invalid SID"
+msgstr ""
+
+#. debug
+#: windows/src/user.cc
+msgid "Failed to check membership: {1}"
+msgstr ""
+
+#. debug
+#: windows/src/user.cc
+msgid "GetUserProfileDirectoryW call returned unexpectedly"
+msgstr ""
+
+#. debug
+#: windows/src/user.cc
+msgid "GetUserProfileDirectoryW call failed: {1}"
+msgstr ""
+
+#. LOCALE: format a pointer as hex for printing an error message.
+#: windows/src/wmi.cc
+msgid "{1} (0x{2,num=hex})"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "%1% (0x%2$#x)"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "initializing WMI"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "using prior COM concurrency model"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "failed to initialize COM library"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "COM single-threaded apartment not supported, using multi-threaded"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "failed to create IWbemLocator object"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "could not connect to WMI server"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "could not set proxy blanket"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "ignoring {1}-dimensional array in query {2}.{3}"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid ""
+"WMI query {1}.{2} result could not be converted from type {3} to a string"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "query {1} failed"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "query {1}.{2} could not be found"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "only single value requested from array for key {1}"
+msgstr ""
+
+#. debug
+#: windows/src/wmi.cc
+msgid "only single entry requested from array of entries for key {1}"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "unable to get from empty array of objects"
+msgstr ""
+
+#: windows/src/wmi.cc
+msgid "unable to get_range from empty array of objects"
+msgstr ""
