@@ -1,30 +1,32 @@
 CMAKE=<%= cmake_binary %>
 ROOT=<%= source_root %>
-OPTS=<%= cmake_opts %>
+OPTS=-DCMAKE_INSTALL_PREFIX=../../prefix -DLEATHERMAN_GETTEXT=OFF <%= cmake_opts %>
+
+LEATHERMAN=-DLeatherman_DIR=`pwd`/../../prefix/lib/cmake/leatherman
 
 all: facter.built
 
 leatherman.built:
 	mkdir -p build/leatherman
 	cd build/leatherman && \
-	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DLEATHERMAN_SHARED=OFF -DLEATHERMAN_GETTEXT=OFF ${OPTS} ${ROOT}/leatherman && \
+	${CMAKE} -DLEATHERMAN_SHARED=OFF ${OPTS} ${ROOT}/leatherman && \
 	make install
 	touch leatherman.built
 
 hocon.built: leatherman.built
 	mkdir -p build/cpp-hocon
 	cd build/cpp-hocon && \
-	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DBUILD_SHARED_LIBS=OFF -DLeatherman_DIR=../../prefix ${OPTS} ${ROOT}/cpp-hocon && \
+	${CMAKE} -DBUILD_SHARED_LIBS=OFF ${LEATHERMAN} ${OPTS} ${ROOT}/cpp-hocon && \
 	make install
 	touch hocon.built
 
 facter.built: hocon.built
 	mkdir -p build/facter
 	cd build/facter && \
-	${CMAKE} -DCMAKE_INSTALL_PREFIX=../../prefix -DLeatherman_DIR=../../prefix -DRUBY_LIB_INSTALL=../../prefix/lib ${OPTS} ${ROOT}/facter && \
+	${CMAKE} -DRUBY_LIB_INSTALL=${ROOT}/prefix/lib ${LEATHERMAN} ${OPTS} ${ROOT}/facter && \
 	make install
 	touch facter.built
 
 install: facter.built
-	mkdir -p ../../lib
-	cp prefix/lib/*facter* ../../lib/
+	mkdir -p ${ROOT}/../../lib
+	cp prefix/lib/*facter* ${ROOT}/../../lib/
